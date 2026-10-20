@@ -1,0 +1,23 @@
+{
+  "name": "painel-loja",
+  "version": "1.0.0",
+  "description": "Painel de gestão da loja",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "exe": "electron-builder --win",
+    "postinstall": "node scripts/copiar-lib.js",
+    "web": "npx serve www"
+  },
+  "build": {
+    "appId": "com.minhaloja.painel",
+    "productName": "Painel da Loja",
+    "files": [
+      "electron/**",
+      "www/**"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

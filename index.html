@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gestão de Roupas</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1>Painel da Loja</h1><div class="mut">Gestão de estoque, vendas e pendências</div><div class="mut" style="margin-top:6px"><span id="st"></span> · <a href="#" onclick="sair();return false" style="color:var(--mut)">Sair</a></div></header>
+<nav><button data-t="est">Estoque</button><button data-t="ven">Vendas</button><button data-t="res">Resumo</button><button data-t="pen">Pendentes</button><button data-t="log">Logs</button></nav>
+<main id="app"></main><dialog id="dlg"></dialog><div id="toast" role="status"></div>
+<div id="gate"><div class="gbox">Carregando…</div></div>
+<script src="supabase.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script src="nuvem.js"></script></body></html>
