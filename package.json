@@ -2,22 +2,28 @@
   "name": "painel-loja",
   "version": "1.0.0",
   "description": "Painel de gestão da loja",
+  "author": "Painel da Loja",
   "main": "electron/main.js",
   "scripts": {
     "start": "electron .",
+    "web": "npx serve www",
     "exe": "electron-builder --win",
-    "postinstall": "node scripts/copiar-lib.js",
-    "web": "npx serve www"
+    "postinstall": "node scripts/copiar-lib.js"
   },
   "build": {
     "appId": "com.minhaloja.painel",
     "productName": "Painel da Loja",
-    "files": [
-      "electron/**",
-      "www/**"
-    ],
-    "win": {
-      "target": "nsis"
-    }
+    "files": ["electron/**", "www/**"],
+    "win": { "target": "nsis" }
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/android": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest",
+    "electron": "latest",
+    "electron-builder": "latest"
   }
 }
