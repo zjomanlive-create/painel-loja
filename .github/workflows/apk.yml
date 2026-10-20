@@ -11,6 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Organizar arquivos
+        shell: bash
+        run: |
+          mkdir -p www scripts electron
+          for f in app.js config.js index.html nuvem.js style.css; do [ -f "$f" ] && mv "$f" www/; done
+          [ -f copiar-lib.js ] && mv copiar-lib.js scripts/
+          [ -f main.js ] && mv main.js electron/
+          ls -R www scripts electron
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -38,6 +46,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Organizar arquivos
+        shell: bash
+        run: |
+          mkdir -p www scripts electron
+          for f in app.js config.js index.html nuvem.js style.css; do [ -f "$f" ] && mv "$f" www/; done
+          [ -f copiar-lib.js ] && mv copiar-lib.js scripts/
+          [ -f main.js ] && mv main.js electron/
+          ls -R www scripts electron
       - uses: actions/setup-node@v4
         with:
           node-version: 22
