@@ -7,14 +7,18 @@
   "scripts": {
     "start": "electron .",
     "web": "npx serve www",
-    "exe": "electron-builder --win",
-    "postinstall": "node scripts/copiar-lib.js"
+    "build:electron": "electron-builder --win"
   },
   "build": {
     "appId": "com.minhaloja.painel",
     "productName": "Painel da Loja",
-    "files": ["electron/**", "www/**"],
-    "win": { "target": "nsis" }
+    "files": [
+      "electron/**/*",
+      "www/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
   },
   "dependencies": {
     "@supabase/supabase-js": "latest",
